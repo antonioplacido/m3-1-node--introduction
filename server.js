@@ -45,6 +45,17 @@ express()
     }, randomTime);
   })
 
+  //PARROT//
+
+  .get("/parrot-message", (req, res) => {
+    const message = { author: "parrot", text: req.query.color };
+    const randomTime = Math.floor(Math.random() * 3000);
+    console.log(req.query.color);
+    setTimeout(() => {
+      res.status(200).json({ status: 200, message });
+    }, randomTime);
+  })
+
   // add new endpoints here ☝️
   // ---------------------------------
   // Nothing to modify below this line
